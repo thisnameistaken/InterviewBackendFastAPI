@@ -12,7 +12,10 @@ google_API_key = os.getenv("API_KEY")
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.getenv("FRONTEND_URL")],
+    allow_origins=[
+        os.getenv("FRONTEND_URL"),
+        os.getenv("PRODUCTION_URL")
+        ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
